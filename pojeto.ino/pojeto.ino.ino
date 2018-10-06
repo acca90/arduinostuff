@@ -43,6 +43,32 @@ OneWire oneWire(TERMOMETRO);
 DallasTemperature sensors(&oneWire);
 DeviceAddress sensor[N_SENSORES];
 
+/**
+ * =================================================================
+ * BLOCO REFERENTE ÀS VARIÁVEIS QUE ARMAZENAM AS ÚLTIMAS LEITURAS
+ * =================================================================
+ */
+/**
+ * Temperatura da água
+ */
+float tempMin;
+float tempMax;
+float tempLast;
+/**
+ * Temperatura do ar
+ */
+ 
+/**
+ * Umidade do ar
+ */
+ 
+/**
+ * Umidade da terra (analog)
+ */ 
+
+/**
+ * Distância
+ */
 
 void setup(void) {
     Serial.begin(9600);
@@ -175,7 +201,7 @@ void loop() {
         //detectaPassaAgua();
     }
     if (ACUMULADOR_TIMER_DISTANCIA >= TIMER_DISTANCIA) {
-        //distancia();
+        distancia();
     }
     if (ACUMULADOR_TIMER_UMIDADE >= TIMER_UMIDADE) {
         umidade();
